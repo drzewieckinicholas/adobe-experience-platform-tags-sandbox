@@ -29,7 +29,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <>
-      <Nav />
+      <Nav
+        items={[
+          { href: '/', text: 'Home' },
+          { href: '/products', text: 'Products' },
+        ]}
+      />
       <Outlet />
     </>
   );
