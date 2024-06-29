@@ -6,6 +6,7 @@ import {
 import { useLoaderData } from '@remix-run/react';
 
 import { getProduct } from '../.server/utils';
+import { ProductCard } from '../components';
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { id } = params;
@@ -26,15 +27,7 @@ export default function Product() {
     <>
       <h1>Product</h1>
       <section>
-        <article>
-          <h2>{product.title}</h2>
-          <dl>
-            <dt>Brand</dt>
-            <dd>{product.brand}</dd>
-            <dt>Price</dt>
-            <dd>{product.price.toFixed(2)}</dd>
-          </dl>
-        </article>
+        <ProductCard attributes={['brand', 'price']} product={product} />
       </section>
     </>
   );

@@ -2,6 +2,7 @@ import { json, type MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
 import { getProducts } from '../.server/utils';
+import { ProductCard } from '../components';
 
 export const loader = async () => {
   const products = await getProducts();
@@ -20,16 +21,13 @@ export default function Products() {
     <>
       <h1>Products</h1>
       <section>
-        {products.map(({ brand, id, price, title }) => (
-          <article key={id}>
-            <h2>{title}</h2>
-            <dl>
-              <dt>Brand</dt>
-              <dd>{brand}</dd>
-              <dt>Price</dt>
-              <dd>{price.toFixed(2)}</dd>
-            </dl>
-          </article>
+        {products.map((product) => (
+          <ProductCard
+            attributes={['brand', 'price']}
+            key={product.id}
+            product={product}
+            titleAs='link'
+          />
         ))}
       </section>
     </>
