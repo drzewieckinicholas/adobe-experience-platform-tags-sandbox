@@ -2,24 +2,13 @@
   "root": true,
   "ignorePatterns": ["**/*"],
   "extends": ["eslint:recommended"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "simple-import-sort"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
-        ]
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": "error"
       }
     },
     {
