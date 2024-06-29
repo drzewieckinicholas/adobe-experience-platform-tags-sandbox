@@ -1,5 +1,7 @@
+import { dataLayerPush, Events } from '@adobe-experience-platform-tags/tags';
 import { json, type MetaFunction } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { useLoaderData, useLocation } from '@remix-run/react';
+import { useEffect } from 'react';
 
 import { getProducts } from '../.server/utils';
 import { ProductCard } from '../components';
@@ -16,6 +18,19 @@ export const meta: MetaFunction = () => {
 
 export default function Products() {
   const { products } = useLoaderData<typeof loader>();
+  const location = useLocation();
+
+  useEffect(() => {
+    dataLayerPush({
+      event: Events.ProductsPageLoad,
+      page: {
+        hash: location.hash,
+        search: location.search,
+      },
+      products,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
