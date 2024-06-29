@@ -10,6 +10,7 @@
     "nx": "19.3.2"
   },
   "workspaces": [
-    "packages/*"
+    "apps/*",
+    "libs/*"
   ]
 }
