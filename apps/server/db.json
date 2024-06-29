@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "brand": "Apple",
+      "id": "1",
+      "price": 5000,
+      "quantity": 1,
+      "title": "Apple Vision Pro"
+    },
+    {
+      "brand": "Google",
+      "id": "2",
+      "price": 550,
+      "quantity": 1,
+      "title": "Pixel Tablet"
+    },
+    {
+      "brand": "Microsoft",
+      "id": "3",
+      "price": 100,
+      "quantity": 1,
+      "title": "Surface Arc Mouse"
+    }
+  ]
+}

@@ -35,7 +35,9 @@ export default function App() {
           { href: '/products', text: 'Products' },
         ]}
       />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }
