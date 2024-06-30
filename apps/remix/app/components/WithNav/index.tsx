@@ -1,4 +1,4 @@
-import { Nav } from '../';
+import { Nav } from '..';
 
 export default function WithNav() {
   const items = [
