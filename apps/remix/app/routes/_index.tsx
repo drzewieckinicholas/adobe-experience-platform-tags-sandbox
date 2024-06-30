@@ -3,7 +3,7 @@ import type { MetaFunction } from '@remix-run/node';
 import { useLocation } from '@remix-run/react';
 import { useEffect } from 'react';
 
-import { HomeLayout } from '../layouts';
+import { Layout } from '../components';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Home' }];
@@ -24,11 +24,11 @@ export default function Home() {
   }, []);
 
   return (
-    <HomeLayout>
+    <Layout heading='Home'>
       <section>
         <h2>Introduction</h2>
         <p>Welcome to Adobe Experience Platform Tags Sandbox 👋</p>
       </section>
-    </HomeLayout>
+    </Layout>
   );
 }

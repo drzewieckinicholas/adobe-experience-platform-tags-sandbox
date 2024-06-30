@@ -8,8 +8,7 @@ import { Link, useLoaderData, useLocation } from '@remix-run/react';
 import { useEffect } from 'react';
 
 import { getProduct } from '../.server/utils';
-import { ProductCard } from '../components';
-import { ProductLayout } from '../layouts';
+import { Layout, ProductCard } from '../components';
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { id } = params;
@@ -40,13 +39,13 @@ export default function Product() {
   }, []);
 
   return (
-    <ProductLayout>
+    <Layout heading='Product'>
       <section>
         <ProductCard attributes={['brand', 'price']} product={product} />
         <Link prefetch='intent' to='/products' unstable_viewTransition>
           Back to Products
         </Link>
       </section>
-    </ProductLayout>
+    </Layout>
   );
 }

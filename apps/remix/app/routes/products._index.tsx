@@ -4,8 +4,7 @@ import { useLoaderData, useLocation } from '@remix-run/react';
 import { useEffect } from 'react';
 
 import { getProducts } from '../.server/utils';
-import { ProductCard } from '../components';
-import { ProductsLayout } from '../layouts';
+import { Layout, ProductCard } from '../components';
 
 export const loader = async () => {
   const products = await getProducts();
@@ -34,7 +33,7 @@ export default function Products() {
   }, []);
 
   return (
-    <ProductsLayout>
+    <Layout heading='Products'>
       <section>
         {products.map((product) => (
           <ProductCard
@@ -45,6 +44,6 @@ export default function Products() {
           />
         ))}
       </section>
-    </ProductsLayout>
+    </Layout>
   );
 }
