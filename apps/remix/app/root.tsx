@@ -6,8 +6,6 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 
-import { Nav } from './components';
-
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
@@ -27,17 +25,5 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return (
-    <>
-      <Nav
-        items={[
-          { href: '/', text: 'Home' },
-          { href: '/products', text: 'Products' },
-        ]}
-      />
-      <main>
-        <Outlet />
-      </main>
-    </>
-  );
+  return <Outlet />;
 }

@@ -3,6 +3,8 @@ import type { MetaFunction } from '@remix-run/node';
 import { useLocation } from '@remix-run/react';
 import { useEffect } from 'react';
 
+import { HomeLayout } from '../layouts';
+
 export const meta: MetaFunction = () => {
   return [{ title: 'Home' }];
 };
@@ -21,5 +23,12 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <h1>Home</h1>;
+  return (
+    <HomeLayout>
+      <section>
+        <h2>Introduction</h2>
+        <p>Welcome to Adobe Experience Platform Tags Sandbox 👋</p>
+      </section>
+    </HomeLayout>
+  );
 }

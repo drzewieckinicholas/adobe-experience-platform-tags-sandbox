@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 
 import { getProducts } from '../.server/utils';
 import { ProductCard } from '../components';
+import { ProductsLayout } from '../layouts';
 
 export const loader = async () => {
   const products = await getProducts();
@@ -33,8 +34,7 @@ export default function Products() {
   }, []);
 
   return (
-    <>
-      <h1>Products</h1>
+    <ProductsLayout>
       <section>
         {products.map((product) => (
           <ProductCard
@@ -45,6 +45,6 @@ export default function Products() {
           />
         ))}
       </section>
-    </>
+    </ProductsLayout>
   );
 }

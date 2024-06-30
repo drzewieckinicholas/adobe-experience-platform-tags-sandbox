@@ -1,10 +1,12 @@
 import { Link } from '@remix-run/react';
 
+type NavItem = {
+  href: string;
+  text: string;
+};
+
 type NavProps = {
-  items: {
-    href: string;
-    text: string;
-  }[];
+  items: NavItem[];
 };
 
 export default function Nav({ items }: NavProps) {

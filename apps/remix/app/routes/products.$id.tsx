@@ -4,11 +4,12 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from '@remix-run/node';
-import { useLoaderData, useLocation } from '@remix-run/react';
+import { Link, useLoaderData, useLocation } from '@remix-run/react';
 import { useEffect } from 'react';
 
 import { getProduct } from '../.server/utils';
 import { ProductCard } from '../components';
+import { ProductLayout } from '../layouts';
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { id } = params;
@@ -39,11 +40,13 @@ export default function Product() {
   }, []);
 
   return (
-    <>
-      <h1>Product</h1>
+    <ProductLayout>
       <section>
         <ProductCard attributes={['brand', 'price']} product={product} />
+        <Link prefetch='intent' to='/products' unstable_viewTransition>
+          Back to Products
+        </Link>
       </section>
-    </>
+    </ProductLayout>
   );
 }
