@@ -1,4 +1,5 @@
 export const Events = {
+  AddToCartButtonClick: 'Add to Cart Button Click',
   CartPageLoad: 'Cart Page Load',
   HomePageLoad: 'Home Page Load',
   ProductPageLoad: 'Product Page Load',

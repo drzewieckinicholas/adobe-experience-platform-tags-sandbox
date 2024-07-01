@@ -1,3 +1,4 @@
+export * from './add-to-cart-button-click';
 export * from './base';
 export * from './cart-page-load';
 export * from './data';

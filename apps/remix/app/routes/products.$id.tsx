@@ -33,10 +33,17 @@ export default function Product() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleClick = () => {
+    dataLayerPush({
+      event: Events.AddToCartButtonClick,
+    });
+  };
+
   return (
     <Layout heading='Product'>
       <section>
         <ProductCard attributes={['brand', 'price']} product={product} />
+        <button onClick={handleClick}>Add to Cart</button>
       </section>
     </Layout>
   );

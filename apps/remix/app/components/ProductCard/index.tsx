@@ -1,4 +1,5 @@
 import { Link } from '@remix-run/react';
+import { Fragment } from 'react';
 
 import type { Product } from '../../types';
 
@@ -21,7 +22,7 @@ export default function ProductCard({
         {title}
       </Link>
     ) : (
-      <>{title}</>
+      title
     );
 
   return (
@@ -30,10 +31,10 @@ export default function ProductCard({
       {attributes.length > 0 && (
         <dl>
           {attributes.map((attribute) => (
-            <div key={attribute}>
+            <Fragment key={attribute}>
               <dt>{attribute}</dt>
               <dd>{product[attribute]}</dd>
-            </div>
+            </Fragment>
           ))}
         </dl>
       )}
