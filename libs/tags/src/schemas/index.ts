@@ -1,4 +1,5 @@
 export * from './base';
+export * from './cart-page-load';
 export * from './data';
 export * from './home-page-load';
 export * from './page';
