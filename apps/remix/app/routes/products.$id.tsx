@@ -4,7 +4,7 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from '@remix-run/node';
-import { Link, useLoaderData, useLocation } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 import { useEffect } from 'react';
 
 import { getProduct } from '../.server/utils';
@@ -24,15 +24,10 @@ export const meta: MetaFunction = () => {
 
 export default function Product() {
   const { product } = useLoaderData<typeof loader>();
-  const location = useLocation();
 
   useEffect(() => {
     dataLayerPush({
       event: Events.ProductPageLoad,
-      page: {
-        hash: location.hash,
-        search: location.search,
-      },
       product,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -42,9 +37,6 @@ export default function Product() {
     <Layout heading='Product'>
       <section>
         <ProductCard attributes={['brand', 'price']} product={product} />
-        <Link prefetch='intent' to='/products' unstable_viewTransition>
-          Back to Products
-        </Link>
       </section>
     </Layout>
   );
