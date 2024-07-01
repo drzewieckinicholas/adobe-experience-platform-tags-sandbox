@@ -11,7 +11,7 @@ export default function Layout({ children, heading }: LayoutProps) {
     <>
       <WithNav />
       <Header heading={heading} />
-      <main>{children}</main>
+      {children && <main>{children}</main>}
     </>
   );
 }
