@@ -10,7 +10,10 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "@adobe-experience-platform-tags/tags": ["libs/tags/src/index.ts"]
+      "@adobe-experience-platform-tags/tags": ["libs/tags/src/index.ts"],
+      "@adobe-experience-platform-tags/web-vitals": [
+        "libs/web-vitals/src/index.ts"
+      ]
     },
     "rootDir": ".",
     "skipDefaultLibCheck": true,
