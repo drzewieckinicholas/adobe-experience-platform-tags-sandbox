@@ -1,4 +1,7 @@
-import { dataLayerPush, Events } from '@adobe-experience-platform-tags/tags';
+import {
+  dataLayerPush,
+  Events,
+} from '@adobe-experience-platform-tags-sandbox/tags';
 import type { MetaFunction } from '@remix-run/node';
 import { useEffect } from 'react';
 

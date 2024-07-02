@@ -1,4 +1,7 @@
-import { dataLayerPush, Events } from '@adobe-experience-platform-tags/tags';
+import {
+  dataLayerPush,
+  Events,
+} from '@adobe-experience-platform-tags-sandbox/tags';
 import { type Metric, onCLS, onFCP, onINP, onLCP, onTTFB } from 'web-vitals';
 
 let isInitialized = false;

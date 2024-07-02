@@ -1,7 +1,7 @@
 import { ZodError } from 'zod';
 
 import { dataSchema } from '../schemas';
-import type { DataSchema } from '../types/schema';
+import type { DataSchema } from '../types';
 
 declare const window: Window & { adobeDataLayer: unknown[] };
 
