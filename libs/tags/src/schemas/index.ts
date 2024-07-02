@@ -6,3 +6,4 @@ export * from './home-page-load';
 export * from './product';
 export * from './product-page-load';
 export * from './products-page-load';
+export * from './web-vitals';
