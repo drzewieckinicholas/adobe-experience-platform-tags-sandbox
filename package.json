@@ -1,0 +1,15 @@
+{
+  "name": "adobe-experience-platform-tags-sandbox",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@nx/js": "19.5.2",
+    "nx": "19.5.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
